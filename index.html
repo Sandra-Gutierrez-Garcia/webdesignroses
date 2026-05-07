@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Roses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+    .Body{
+        background-color: #4f4560;
+    }
+    .Nav-personalizado{
+        padding: 30px;
+        background-color: #6d5f82;
+        border-bottom: 2px solid rgba(228, 220, 242, 0.35);
+        width: 100vw;
+        position: relative;
+        margin-left: calc(-50vw + 50%);
+        margin-top: calc(-50vw + 50%) ;
+        box-sizing: border-box;
+    }
+    .Nav-personalizado ul{
+        list-style: none;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+        
+    }  
+    .Nav-personalizado a {
+        text-decoration: none;
+        color: #c4b4d4;
+        font-family: 'Cinzel', serif;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+    .Nav-personalizado a:hover {
+        color: #e4dcf2;
+    } 
+    .button-language {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: 2px solid rgba(228, 220, 242, 0.35);
+        color: #c4b4d4;
+        font-family: 'Cinzel', serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .hero h1{
+        color: #c4b4d4;
+        font-size: 48px;
+        font-family: 'Cinzel', serif;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 100px;
+    }
+    .hero p{
+        color: #a898bb;
+        font-size: 18px;
+        font-family: 'Cinzel', serif;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 20px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    </style>
+</head>
+<body class="Body">
+<nav class="Nav-personalizado">
+    <ul>
+        <li><a href="#" data-i18n="home">Home</a></li>
+        <li><a href="#" data-i18n="about">About</a></li>
+        <li><a href="#" data-i18n="portfolio">Portfolio</a></li>
+        <li><a href="#" data-i18n="commissions">Commissions</a></li>
+        <li><a href="#" data-i18n="contact">Contact</a></li>
+    </ul>
+    <button id="language-toggle" class="button-language" type="button" aria-label="Change language" data-lang="en">EN</button>
+</nav>
+<main>
+    <section class="hero">
+        <h1 data-i18n="heroTitle">Welcome to Web Design Roses</h1>
+        <p data-i18n="heroDesc">I create websites with a unique style for each project — clean layouts, careful typography, and a personal touch. Available for commissions and custom designs.</p>
+
+    </section>
+</main>
+</body>
+<footer>  
+    <script>
+        const buttonLanguage = document.getElementById("language-toggle");
+        const navTexts = document.querySelectorAll("[data-i18n]");
+        const i18n = {
+            en: {
+                home: "Home",
+                about: "About",
+                portfolio: "Portfolio",
+                commissions: "Commissions",
+                contact: "Contact",
+                heroTitle: "Web Design Roses",
+                heroDesc: "I create websites with a unique style for each project — clean layouts, careful typography, and a personal touch. Available for commissions and custom designs."
+            },
+            es: {
+                home: "Inicio",
+                about: "Sobre mi",
+                portfolio: "Portafolio",
+                commissions: "Comisiones",
+                contact: "Contacto",
+                heroTitle: "Web Design Roses",
+                heroDesc: "Creo páginas web con un estilo único para cada proyecto — diseño limpio, tipografía cuidada y un toque personal. Disponible para comisiones y diseños personalizados."
+            }
+        };
+
+        let currentLang = "en";
+
+        const renderLanguage = () => {
+            navTexts.forEach((item) => {
+                item.textContent = i18n[currentLang][item.dataset.i18n];
+            });
+
+            buttonLanguage.textContent = currentLang === "en" ? "ES" : "EN";
+            buttonLanguage.setAttribute("data-lang", currentLang);
+            document.documentElement.lang = currentLang;
+        };
+
+        buttonLanguage.addEventListener("click", () => {
+            currentLang = currentLang === "en" ? "es" : "en";
+            renderLanguage();
+        });
+
+        renderLanguage();
+    </script>
+</footer>
+</html>
