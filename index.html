@@ -6,74 +6,218 @@
     <title>Web Design Roses</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     <style>
-    .Body{
-        background-color: #4f4560;
-    }
-    .Nav-personalizado{
-        padding: 30px;
-        background-color: #6d5f82;
-        border-bottom: 2px solid rgba(228, 220, 242, 0.35);
-        width: 100vw;
-        position: relative;
-        margin-left: calc(-50vw + 50%);
-        margin-top: calc(-50vw + 50%) ;
-        box-sizing: border-box;
-    }
-    .Nav-personalizado ul{
-        list-style: none;
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin: 0;
-        padding: 0;
-        
-    }  
-    .Nav-personalizado a {
-        text-decoration: none;
-        color: #c4b4d4;
-        font-family: 'Cinzel', serif;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-    }
-    .Nav-personalizado a:hover {
-        color: #e4dcf2;
-    } 
-    .button-language {
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: transparent;
-        border: 2px solid rgba(228, 220, 242, 0.35);
-        color: #c4b4d4;
-        font-family: 'Cinzel', serif;
-        font-weight: 600;
-        text-transform: uppercase;
-        padding: 5px 10px;
-        cursor: pointer;
-    }
-    .hero h1{
-        color: #c4b4d4;
-        font-size: 48px;
-        font-family: 'Cinzel', serif;
-        font-weight: 600;
-        text-align: center;
-        margin-top: 100px;
-    }
-    .hero p{
-        color: #a898bb;
-        font-size: 18px;
-        font-family: 'Cinzel', serif;
-        font-weight: 400;
-        text-align: center;
-        margin-top: 20px;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+        /* ===== BASE STYLES ===== */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Main body container */
+        .Body {
+            background: radial-gradient(  #2d1f45 0%, #1e1530 55%, #130f1f 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== NAVIGATION STYLES ===== */
+        .Nav-personalizado {
+            padding: 28px 30px;
+            background: rgba(22, 14, 38, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(160, 110, 210, 0.25);
+            width: 100vw;
+            position: relative;
+            margin-left: calc(-50vw + 50%);
+            margin-top: calc(-50vw + 50%);
+            box-sizing: border-box;
+        }
+
+        .Nav-personalizado ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .Nav-personalizado a {
+            text-decoration: none;
+            color: #b8a8cc;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .Nav-personalizado a:hover {
+            color: #e8dff5;
+        }
+
+        .button-language {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: 1px solid rgba(160, 110, 210, 0.4);
+            color: #b8a8cc;
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            cursor: pointer;
+            letter-spacing: 0.1em;
+        }
+
+        .button-language:hover {
+            border-color: rgba(160, 110, 210, 0.75);
+            color: #e0d4f0;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding-bottom: 80px;
+        }
+
+        .hero h1 {
+            color: #ede5f8;
+            font-size: 48px;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 0;
+            letter-spacing: 0.04em;
+        }
+
+        .hero p {
+            color: #9888b0;
+            font-size: 17px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-style: italic;
+            text-align: center;
+            margin-top: 20px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* ===== MAIN LAYOUT ===== */
+        main {
+            flex: 1;
+        }
+
+        /* ===== SHOWCASE SECTION ===== */
+        .webCreate {
+            padding: 50px 30px 60px;
+            border-top: 1px solid rgba(160, 110, 210, 0.2);
+        }
+
+        .webCreate h2 {
+            color: #d4c4e8;
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            font-size: 13px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* ===== PROJECTS GRID ===== */
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .project-card {
+            background: rgba(30, 20, 48, 0.7);
+            border: 1px solid rgba(160, 110, 210, 0.25);
+            border-radius: 10px;
+            padding: 24px 22px;
+            width: 300px;
+            color: #c0b0d8;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+        }
+
+        .project-card:hover {
+            border-color: rgba(160, 110, 210, 0.55);
+            box-shadow: 0 8px 32px rgba(100, 50, 160, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .project-card h3 {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 15px;
+            color: #ede5f8;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 5px;
+            text-decoration-color: rgba(160, 110, 210, 0.5);
+            margin: 0;
+            letter-spacing: 0.05em;
+        }
+
+        .project-card p {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #b0a0c8;
+            line-height: 1.65;
+            margin: 0;
+            text-align: center;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: auto;
+            align-self: center;
+            font-family: 'Cinzel', serif;
+            font-size: 10px;
+            font-weight: 600;
+            color: #b8a8cc;
+            text-decoration: none;
+            border: 1px solid rgba(160, 110, 210, 0.4);
+            padding: 6px 18px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+        }
+
+        .project-link:hover {
+            color: #ede5f8;
+            border-color: rgba(160, 110, 210, 0.8);
+            background: rgba(160, 110, 210, 0.08);
+        }
+
+        /* ===== FOOTER ===== */
+        .contact-info {
+            background: rgba(16, 10, 28, 0.9);
+            color: #9888b0;
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            font-size: 13px;
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(160, 110, 210, 0.2);
+        }
+
     
     </style>
 </head>
@@ -92,11 +236,22 @@
     <section class="hero">
         <h1 data-i18n="heroTitle">Welcome to Web Design Roses</h1>
         <p data-i18n="heroDesc">I create websites with a unique style for each project — clean layouts, careful typography, and a personal touch. Available for commissions and custom designs.</p>
+    </section>
 
+    <section class="webCreate">
+        <h2 data-i18n="webCreateTitle">Showcase</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3 data-i18n="bookReaderApp">Book Reader App</h3>
+                <p data-i18n="bookReaderAppDesc">A community platform where users can discover, read, and like books created by other authors. Features a clean interface for browsing collections and interactive like functionality.</p>
+                <a href="#" class="project-link" data-i18n="viewProject">View Project</a>
+            </div>
+        </div>
     </section>
 </main>
-</body>
-<footer>  
+<footer>
+    <div class ="contact-info">
+    </div>
     <script>
         const buttonLanguage = document.getElementById("language-toggle");
         const navTexts = document.querySelectorAll("[data-i18n]");
@@ -108,7 +263,11 @@
                 commissions: "Commissions",
                 contact: "Contact",
                 heroTitle: "Web Design Roses",
-                heroDesc: "I create websites with a unique style for each project — clean layouts, careful typography, and a personal touch. Available for commissions and custom designs."
+                heroDesc: "I create websites with a unique style for each project — clean layouts, careful typography, and a personal touch. Available for commissions and custom designs.",
+                webCreateTitle: "Showcase",
+                bookReaderApp: "Book Reader App",
+                bookReaderAppDesc: "A community platform where users can discover, read, and like books created by other authors. Features a clean interface for browsing collections and interactive like functionality.", 
+                viewProject: "View Project"
             },
             es: {
                 home: "Inicio",
@@ -117,7 +276,11 @@
                 commissions: "Comisiones",
                 contact: "Contacto",
                 heroTitle: "Web Design Roses",
-                heroDesc: "Creo páginas web con un estilo único para cada proyecto — diseño limpio, tipografía cuidada y un toque personal. Disponible para comisiones y diseños personalizados."
+                heroDesc: "Creo páginas web con un estilo único para cada proyecto — diseño limpio, tipografía cuidada y un toque personal. Disponible para comisiones y diseños personalizados.",
+                webCreateTitle: "Galería",
+                bookReaderApp: "Aplicación de Lectura de Libros",
+                bookReaderAppDesc: "Plataforma comunitaria para descubrir, leer y compartir libros. Interfaz limpia con funcionalidad interactiva de me gusta.",
+                viewProject: "Ver Proyecto"
             }
         };
 
@@ -141,4 +304,5 @@
         renderLanguage();
     </script>
 </footer>
+</body>
 </html>
